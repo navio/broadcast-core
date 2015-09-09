@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/navio/broadcast-core#readme",
   "devDependencies": {
-    "babel": "^5.8.23"
+    "babel": "^5.8.23",
+    "mocha": "^2.3.2"
   },
   "dependencies": {
     "broadcastjs": "^1.0.5"
