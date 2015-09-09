@@ -4,6 +4,7 @@
   "description": "Core Widget loader and subscription manager.",
   "main": "index.js",
   "scripts": {
+    "start": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,16 +1,23 @@
-import Broadcast, {Widget} from "broadcastjs";
+import widgetloader from "./widgetloader";
+import Broadcast from "broadcastjs";
 
-let playDispatch = new Broadcast();
+const playDispatch = new Broadcast();
+const widgetPath = "./widgets";
 
-let widget1 = new Widget("one",playDispatch);
-let widget2 = new Widget("two",playDispatch);
-let widget3 = new Widget("three",playDispatch);
+function boot(dispatcher,path){
+  let widgetsToStart = widgetloader(path).widgetsInit;
+  let widgets = [];
+  let i = 0, max = widgetsToStart.length;
+      for(;i<max;i++){
+        widgets.push(require(widgetsToStart[i])(dispatcher));
+      }
+  return widgets;
+}
 
-widget1.subscribeWidget();
-widget2.subscribeWidget();
-widget3.subscribeWidget();
+function subscribeWidgets(widgets){
+  widgets.forEach(widget => widget.subscribeWidget());
+}
 
-
-//console.log(playDispatch._showSubscribers().length)
-
-playDispatch.pushMessage("hola");
+function sendBeat(dispatcher,message){
+    dispatcher.pushMessage(message);
+}
