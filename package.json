@@ -1,0 +1,29 @@
+{
+  "name": "broadcast-core",
+  "version": "1.0.0",
+  "description": "Core Widget loader and subscription manager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navio/broadcast-core.git"
+  },
+  "keywords": [
+    "Widget",
+    "Manager"
+  ],
+  "author": "Alberto Navarro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/navio/broadcast-core/issues"
+  },
+  "homepage": "https://github.com/navio/broadcast-core#readme",
+  "devDependencies": {
+    "babel": "^5.8.23"
+  },
+  "dependencies": {
+    "broadcastjs": "^1.0.5"
+  }
+}
